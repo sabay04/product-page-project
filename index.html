@@ -10,10 +10,17 @@
   </head>
   <body>
     <div id="app">
-      <h1>Product goes here</h1>
+      <div v-for="product in products">
+        <h1>{{product.title}}</h1>
+        <p>{{product.description }}</p>
+      </div>
     </div>
 
-    <!-- Import Js -->
+    <!-- Import App -->
     <script src="./main.js"></script>
+
+    <script>
+      const mountedApp = app.mount("#app");
+    </script>
   </body>
 </html>
