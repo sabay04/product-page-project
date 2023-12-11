@@ -10,14 +10,20 @@
   </head>
   <body>
     <div id="app">
-      <div v-for="product in products">
-        <h1>{{product.title}}</h1>
-        <p>{{product.description }}</p>
-      </div>
+      <div class="nav-bar"></div>
+      <div class="cart">Card({{ cart.length }})</div>
+      <product-display
+        :premium="premium"
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeFromCart"
+      ></product-display>
     </div>
 
     <!-- Import App -->
     <script src="./main.js"></script>
+    <script src="./components/ProductDisplay.js"></script>
+    <script src="./components/ReviewForm.js"></script>
+    <script src="./components/ReviewList.js"></script>
 
     <script>
       const mountedApp = app.mount("#app");
